@@ -42,7 +42,14 @@ export default function Navbar(props) {
 }
 
 
+//  Titles should be defined in the required Data Types
 Navbar.propTypes = {
     title: propTypes.string,
     aboutTitle: propTypes.string
+}
+
+// If no title is given
+Navbar.defaultProps = {
+    title: 'Enter title here',
+    aboutTitle: 'Enter about title '
 }
