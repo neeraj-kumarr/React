@@ -32,13 +32,26 @@ function App() {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("Light Mode Enabled", "success")
-
     }
   }
 
+  const greyToggleMode = () => {
+    if (mode === 'light') {
+      setMode('grey')
+      document.body.style.backgroundColor = 'darkgrey';
+      showAlert("Grey Mode Enabled", "success")
+    } else {
+      setMode('light');
+      document.body.style.backgroundColor = 'white';
+      showAlert("Light Mode Enabled", "success")
+    }
+  }
+
+
+
   return (
     <>
-      <Navbar title='My First App' aboutTitle="About Us" mode={mode} toggleMode={toggleMode} />
+      <Navbar title='My First App' aboutTitle="About Us" mode={mode} toggleMode={toggleMode} greyToggleMode={greyToggleMode} />
 
       <Alert alert={alert} />
 

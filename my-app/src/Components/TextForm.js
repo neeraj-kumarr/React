@@ -55,7 +55,13 @@ export default function TextForm(props) {
             <div className="container my-3">
                 <h1 className="mb-4" style={{ color: props.mode === 'dark' ? 'whitesmoke' : 'black' }}>{props.heading}</h1>
                 <div className="mb-3">
-                    <textarea className="form-control" value={text} onChange={handleOnChange} style={{ backgroundColor: props.mode === 'dark' ? 'black' : 'white', color: props.mode === 'dark' ? 'whitesmoke' : 'black' }} id="exampleFormControlTextarea1" rows="8"></textarea>
+                    <textarea className="form-control" value={text} onChange={handleOnChange}
+                        style={{
+                            backgroundColor: props.mode === 'dark' ? 'black' : props.mode === 'grey' ? 'grey' : 'white',
+                            color: props.mode === 'dark' ? 'whitesmoke' : props.mode === 'grey' ? 'whitesmoke' : 'black'
+                        }}
+                        id="exampleFormControlTextarea1" rows="8">
+                    </textarea>
                 </div>
                 <button className="btn btn-success my-2 mx-2" onClick={handleUpClick}>Convert to UpperCase</button>
                 <button className="btn btn-success my-2 mx-2" onClick={handleLowClick}>Convert to LowerCase</button>
@@ -65,7 +71,9 @@ export default function TextForm(props) {
 
             <div className="container" style={{ color: props.mode === 'dark' ? 'whitesmoke' : 'black' }}>
                 <h2  >Your Text Summary</h2>
-                <p>{text.trim().split(' ').length} words and {text.trim().length} characters</p>
+                {/* <p>{text.trim().split(' ').length} words and {text.trim().length} characters</p> */}
+                <p>{text.trim().length > 1 ? text.split(' ').length - 1 : text.trim().split(' ').length} words and {text.trim().length} characters</p>
+
                 {/* if the time is less than 1 min, convert into seconds */}
 
                 <p> {(1 / 125) * text.length} Minutes Read</p>
