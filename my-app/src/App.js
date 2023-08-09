@@ -23,7 +23,17 @@ function App() {
     }, 1500);
   }
 
-  const toggleMode = () => {
+  const removeBodyClasses = () => {
+    document.body.classList.remove('bg-primary')
+    document.body.classList.remove('bg-secondary')
+    document.body.classList.remove('bg-success')
+    document.body.classList.remove('bg-danger')
+    document.body.classList.remove('bg-dark')
+  }
+
+  const toggleMode = (cls) => {
+    removeBodyClasses();
+    document.body.classList.add('bg-' + cls)
     if (mode === 'light') {
       setMode('dark')
       document.body.style.backgroundColor = 'black';
@@ -35,23 +45,12 @@ function App() {
     }
   }
 
-  const greyToggleMode = () => {
-    if (mode === 'light') {
-      setMode('grey')
-      document.body.style.backgroundColor = 'darkgrey';
-      showAlert("Grey Mode Enabled", "success")
-    } else {
-      setMode('light');
-      document.body.style.backgroundColor = 'white';
-      showAlert("Light Mode Enabled", "success")
-    }
-  }
 
 
 
   return (
     <>
-      <Navbar title='My First App' aboutTitle="About Us" mode={mode} toggleMode={toggleMode} greyToggleMode={greyToggleMode} />
+      <Navbar title='My First App' aboutTitle="About Us" mode={mode} toggleMode={toggleMode} />
 
       <Alert alert={alert} />
 
