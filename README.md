@@ -1,2 +1,2 @@
-# React
+# ReactJS
 Welcome to my personal React learning repository! This repo documents my journey as I delve into the world of React, sharing my progress, projects, and insights. Through a series of hands-on exercises, tutorials, and small projects, I aim to grasp the fundamentals and nuances of React development. Feel free to explore the code, follow my growth, and maybe even find some useful snippets for your own React endeavors. Let's learn, build, and innovate together in the exciting realm of React!
