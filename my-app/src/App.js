@@ -23,25 +23,28 @@ function App() {
     }, 1500);
   }
 
-  const removeBodyClasses = () => {
-    document.body.classList.remove('bg-primary')
-    document.body.classList.remove('bg-secondary')
-    document.body.classList.remove('bg-success')
-    document.body.classList.remove('bg-danger')
-    document.body.classList.remove('bg-dark')
-  }
+  // const removeBodyClasses = () => {
+  //   document.body.classList.remove('bg-primary')
+  //   document.body.classList.remove('bg-secondary')
+  //   document.body.classList.remove('bg-success')
+  //   document.body.classList.remove('bg-danger')
+  //   document.body.classList.remove('bg-dark')
+  // }
 
   const toggleMode = (cls) => {
-    removeBodyClasses();
-    document.body.classList.add('bg-' + cls)
+    // removeBodyClasses();
+    // document.body.classList.add('bg-' + cls)
     if (mode === 'light') {
       setMode('dark')
       document.body.style.backgroundColor = 'black';
       showAlert("Dark Mode Enabled", "success")
+      // document.title = 'React - Dark Mode'
     } else {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("Light Mode Enabled", "success")
+      // document.title = 'React  - Light Mode'
+
     }
   }
 
