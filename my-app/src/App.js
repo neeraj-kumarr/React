@@ -8,8 +8,7 @@ import React, { useState } from 'react'
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 
@@ -53,27 +52,16 @@ function App() {
     }
   }
 
-
-
-
   return (
     <>
-
       <Router>
         <Navbar title='My First App' aboutTitle="About Us" mode={mode} toggleMode={toggleMode} />
-
         <Alert alert={alert} />
 
-
-
         <Routes>
+          <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Write down the message " mode={mode} />} />
           <Route exact path="/about" element={<About />} />
-
-          <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Write down the message " mode={mode} />}>
-          </Route>
-
         </Routes>
-
 
       </Router>
 
