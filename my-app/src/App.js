@@ -5,7 +5,12 @@ import Navbar from './Components/Navbar';
 import Alert from './Components/Alert';
 import TextForm from './Components/TextForm';
 import React, { useState } from 'react'
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 function App() {
@@ -53,18 +58,24 @@ function App() {
 
   return (
     <>
-      <Navbar title='My First App' aboutTitle="About Us" mode={mode} toggleMode={toggleMode} />
 
-      <Alert alert={alert} />
+      <Router>
+        <Navbar title='My First App' aboutTitle="About Us" mode={mode} toggleMode={toggleMode} />
 
-      <div className="container">
-        <TextForm showAlert={showAlert} heading="Write down the message " mode={mode} />
-      </div>
+        <Alert alert={alert} />
 
-      {/* <div className="container">
-        <About />
-      </div> */}
 
+
+        <Routes>
+          <Route exact path="/about" element={<About />} />
+
+          <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Write down the message " mode={mode} />}>
+          </Route>
+
+        </Routes>
+
+
+      </Router>
 
     </>
   );
