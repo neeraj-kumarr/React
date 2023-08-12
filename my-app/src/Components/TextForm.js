@@ -63,23 +63,21 @@ export default function TextForm(props) {
                         id="exampleFormControlTextarea1" rows="8">
                     </textarea>
                 </div>
-                <button className="btn btn-success my-2 mx-2" onClick={handleUpClick}>Convert to UpperCase</button>
-                <button className="btn btn-success my-2 mx-2" onClick={handleLowClick}>Convert to LowerCase</button>
-                <button className="btn btn-success my-2 mx-2" onClick={toggleCase}>ToggleCase</button>
-                <button className="btn btn-success my-2 mx-2" onClick={titleCase}>Capitalize Each Word</button>
+                <button disabled={text.length === 0} className="btn btn-success my-2 mx-2" onClick={handleUpClick}>Convert to UpperCase</button>
+                <button disabled={text.length === 0} className="btn btn-success my-2 mx-2" onClick={handleLowClick}>Convert to LowerCase</button>
+                <button disabled={text.length === 0} className="btn btn-success my-2 mx-2" onClick={toggleCase}>ToggleCase</button>
+                <button disabled={text.length === 0} className="btn btn-success my-2 mx-2" onClick={titleCase}>Capitalize Each Word</button>
             </div>
 
             <div className="container" style={{ color: props.mode === 'dark' ? 'whitesmoke' : 'black' }}>
                 <h2  >Your Text Summary</h2>
-                {/* <p>{text.trim().split(' ').length} words and {text.trim().length} characters</p> */}
-                <p>{text.trim().length > 1 ? text.split(' ').length - 1 : text.trim().split(' ').length} words and {text.trim().length} characters</p>
+                <p>{text.trim().split(' ').filter((e) => { return e.length !== 0 }).length} words and {text.trim().length} characters</p>
 
                 {/* if the time is less than 1 min, convert into seconds */}
 
                 <p> {(1 / 125) * text.length} Minutes Read</p>
                 <h1>Preview</h1>
-                <p><i>{text}</i></p>
-
+                <p><i>{text.length > 0 ? text : "Nothing to preview!"}</i></p>
             </div>
         </div>
     )

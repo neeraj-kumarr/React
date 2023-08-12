@@ -1,44 +1,50 @@
 import React, { useState } from 'react'
 
-export default function About() {
+export default function About(props) {
 
     // Initial State of Mystyle will be like this
-    const [myStyle, setMyStyle] = useState({
-        color: 'black',
-        backgroundColor: 'white'
-    })
+    // const [myStyle, setMyStyle] = useState({
+    //     color: 'black',
+    //     backgroundColor: 'white'
+    // })
 
-    const [myBtn, myBtnStyle] = useState({
-        color: 'white',
-        content: 'Enable Dark mode',
-    })
+    let myStyle = {
+        color: props.mode === 'dark' ? 'white' : 'black',
+        backgroundColor: props.mode === 'dark' ? 'black' : 'white'
 
-    const [myButton, myBtnText] = useState("Enable Dark Mode")
-
-    const toggleCase = () => {
-        if (myStyle.color === 'white') {
-            setMyStyle({
-                color: 'black',
-                backgroundColor: 'white',
-            })
-            myBtnStyle({
-                backgroundColor: 'black',
-                color: 'white',
-            });
-            myBtnText("Enable Dark Mode")
-        }
-        else {
-            setMyStyle({
-                color: 'white',
-                backgroundColor: 'black'
-            })
-            myBtnStyle({
-                backgroundColor: 'white',
-                color: 'black',
-            });
-            myBtnText("Enable Light Mode")
-        }
     }
+
+    // const [myBtn, myBtnStyle] = useState({
+    //     color: 'white',
+    //     content: 'Enable Dark mode',
+    // })
+
+    // const [myButton, myBtnText] = useState("Enable Dark Mode")
+
+    // const toggleCase = () => {
+    //     if (myStyle.color === 'white') {
+    //         setMyStyle({
+    //             color: 'black',
+    //             backgroundColor: 'white',
+    //         })
+    //         myBtnStyle({
+    //             backgroundColor: 'black',
+    //             color: 'white',
+    //         });
+    //         myBtnText("Enable Dark Mode")
+    //     }
+    //     else {
+    //         setMyStyle({
+    //             color: 'white',
+    //             backgroundColor: 'black'
+    //         })
+    //         myBtnStyle({
+    //             backgroundColor: 'white',
+    //             color: 'black',
+    //         });
+    //         myBtnText("Enable Light Mode")
+    //     }
+    // }
 
     return (
         <div className='container my-5' style={myStyle}>
@@ -81,9 +87,9 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <div className="container my-3">
+            {/* <div className="container my-3">
                 <button type="button" onClick={toggleCase} style={myBtn} className="btn btn-dark mb-3" >{myButton}</button>
-            </div>
+            </div> */}
 
         </div>
     )
