@@ -58,7 +58,6 @@ function App() {
         <Navbar title='My First App' aboutTitle="About Us" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
 
-
         <Routes>
           <Route exact path="/about" element={<About mode={mode} />} />
           <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Write down the message " mode={mode} />} />
