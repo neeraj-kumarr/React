@@ -1,5 +1,6 @@
 # TextUtils - A Text Utility App
-
+\
+\
 ✨ **EASY TEXT EDITING:** Transform text to UPPERCASE 💪, lowercase 📝, or give it a Title Case 👑 effortlessly.
 
 📚 **TEXT SUMMARIZATION:** Get quick word and character counts to skim through content efficiently. 📊
