@@ -14,4 +14,4 @@
 \
 \
 \
-![image](https://github.com/neeraj-kumarr/React-TextUtils/assets/98312905/6f8528d4-f6cc-4a64-91c0-4cb241b49308)
+![image](https://github.com/neeraj-kumarr/React-TextUtils/assets/98312905/8d553031-3433-44df-be43-37136f0e39bf)
