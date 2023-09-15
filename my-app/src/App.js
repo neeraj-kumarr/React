@@ -55,7 +55,7 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar title='My First App' aboutTitle="About Us" mode={mode} toggleMode={toggleMode} />
+        <Navbar title='TextUtils' aboutTitle="About Us" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
 
         <Routes>
